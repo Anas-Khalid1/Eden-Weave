@@ -3,6 +3,15 @@ import { HeroSection } from "@/components/homeSections/hero-section";
 import ContactFormSection from "@/components/contactSection/contact-form-section";
 import Footer from "@/components/Footer/footer";
 
+export const metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Eden Weave Foundation. Contact us for inquiries, volunteer opportunities, or to learn more about our community programs in Milton Keynes.",
+  openGraph: {
+    title: "Contact Us | Eden Weave Foundation",
+    description: "Get in touch with Eden Weave Foundation",
+  },
+};
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen relative">

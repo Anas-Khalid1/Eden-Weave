@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/footer";
 import Link from "next/link";
 import { useState } from "react";
 import { VolunteerModal } from "@/reusableComponents/volunteerForm";
+
 export default function AboutPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
