@@ -78,29 +78,15 @@ const Footer = () => {
 
             {/* Address */}
             <div className="text-gray-400 text-sm leading-relaxed mb-5">
-              <p>Box 3233</p>
-              <p>1810 Kings Way</p>
-              <p>Milton Keynes , United Kingdom</p>
+              <p>71 Cardno Avenue</p>
+              <p>Glebe Farm</p>
+              <p>Milton Keynes MK17 7DY</p>
             </div>
 
             {/* Phone Numbers */}
-            <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-emerald-400" />
-                <span className="text-sm">
-                  <span className="text-white font-medium">Milton Keynes</span>
-                  <span className="text-gray-400"> : 020-1455-236-34</span>
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-emerald-400" />
-                <span className="text-sm">
-                  <span className="text-white font-medium">London</span>
-                  <span className="text-gray-400"> : 020-1455-236-34</span>
-                </span>
-              </div>
-            </div>
-
+           
+             
+      
             {/* Email */}
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-emerald-400" />
@@ -108,7 +94,7 @@ const Footer = () => {
                 href="mailto:EdenWeaveFoundation@gmail.com"
                 className="text-gray-400 text-sm hover:text-white transition-colors duration-300"
               >
-                EdenWeaveFoundation@gmail.com
+             edenweavefoundation@gmail.com
               </a>
             </div>
           </div>

@@ -1,16 +1,19 @@
 "use client"
 
 import { Search, Menu } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 const navItems = [
-  { name: "Home", href: "#", active: true },
-  { name: "About", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Events", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "Contact Us", href: "#" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact Us", href: "/contact" },
 ]
 
 export function NavigationBar({ isSticky, onMenuToggle }) {
+  const pathname = usePathname()
+
   return (
     <div
       className={`
@@ -27,18 +30,21 @@ export function NavigationBar({ isSticky, onMenuToggle }) {
 
           {/* Desktop Navigation - Updated colors to navy blue and gold */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`relative py-5 text-sm font-medium transition-colors ${
-                  item.active ? "text-[#1e3a5f]" : "text-gray-800 hover:text-[#1e3a5f]"
-                }`}
-              >
-                {item.name}
-                {item.active && <span className="absolute bottom-4 left-0 right-0 h-0.5 bg-[#c4a35a]" />}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`relative py-5 text-sm font-medium transition-colors ${
+                    isActive ? "text-[#1e3a5f]" : "text-gray-800 hover:text-[#1e3a5f]"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && <span className="absolute bottom-4 left-0 right-0 h-0.5 bg-[#c4a35a]" />}
+                </a>
+              )
+            })}
           </nav>
 
           {/* Right side icons - Updated hover color */}

@@ -1,5 +1,6 @@
 import { Jost } from "next/font/google";
 import "./globals.css";
+import { FloatingWhatsApp } from "@/reusableComponents/floatingWhatsapp";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         className={`${jost.variable} font-sans antialiased`}
       >
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

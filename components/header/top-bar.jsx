@@ -1,6 +1,8 @@
-import { Facebook, Linkedin, Phone, Instagram, Lock, User } from "lucide-react"
-
+import { Facebook, Linkedin, Phone, Instagram, Lock, User } from "lucide-react";
+import { useState } from "react";
+import { VolunteerModal } from "@/reusableComponents/volunteerForm";
 export function TopBar() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="bg-[#1a1a1a] text-white py-3 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -44,7 +46,11 @@ export function TopBar() {
               What We Do
             </a>
             <span className="text-gray-500">|</span>
-            <a href="#" className="hover:text-[#2ec4a5] transition-colors">
+            <a
+              href="#"
+              className="hover:text-[#2ec4a5] transition-colors"
+              onClick={() => setIsModalOpen(true)}
+            >
               Become A Volunteer
             </a>
             <span className="text-gray-500">|</span>
@@ -64,6 +70,10 @@ export function TopBar() {
           </div> */}
         </div>
       </div>
+      <VolunteerModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
-  )
+  );
 }

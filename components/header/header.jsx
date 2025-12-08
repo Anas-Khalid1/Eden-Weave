@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <>
-      <header ref={headerRef} className="relative z-100 bg-transparent">
+      <header ref={headerRef} className="relative bg-transparent">
         <div className="hidden lg:block">
           <TopBar />
         </div>
@@ -45,7 +45,7 @@ export function Header() {
           ref={navRef}
           className={`
             transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)]
-            ${isSticky ? "fixed top-0 left-0 right-0" : "relative"}
+            ${isSticky ? "fixed top-0 left-0 right-0 z-50" : "relative"}
           `}
         >
           <div
