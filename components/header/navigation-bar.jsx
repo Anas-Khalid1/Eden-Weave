@@ -2,6 +2,7 @@
 
 import { Search, Menu } from "lucide-react"
 import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -22,18 +23,25 @@ export function NavigationBar({ isSticky, onMenuToggle }) {
         ${isSticky ? "rounded-none" : " lg:rounded-[10px] rounded-none"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className={`mx-auto px-4 lg:px-8 transition-all duration-700 ${isSticky ? "max-w-full" : "max-w-7xl"}`}>
         <div className="flex items-center justify-between h-16">
-          <div className="lg:hidden flex items-center gap-3">
-            <img src="/logo.png" alt="Eden Weave Foundation" className="h-10 w-auto" />
+          {/* Logo - Only show on mobile or when sticky */}
+          <div className={`flex items-center gap-3 transition-all duration-700 ${isSticky ? "lg:flex" : "lg:hidden"}`}>
+            <img
+              src="/logo.png"
+              alt="Eden Weave Foundation"
+              className={`w-auto transition-all duration-700 ${isSticky ? "h-12" : "h-10"}`}
+            />
           </div>
 
           {/* Desktop Navigation - Updated colors to navy blue and gold */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = pathname === item.href
+              // Handle both with and without trailing slash
+              const isActive = pathname === item.href || pathname === `${item.href}/`
+
               return (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className={`relative py-5 text-sm font-medium transition-colors ${
@@ -42,16 +50,36 @@ export function NavigationBar({ isSticky, onMenuToggle }) {
                 >
                   {item.name}
                   {isActive && <span className="absolute bottom-4 left-0 right-0 h-0.5 bg-[#c4a35a]" />}
-                </a>
+                </Link>
               )
             })}
           </nav>
 
-          {/* Right side icons - Updated hover color */}
+          {/* Right side - Search (when not sticky) or Donate button (when sticky) */}
           <div className="flex items-center gap-2">
-            <button className="p-2 hover:text-[#1e3a5f] transition-colors">
+            {/* Search Button - Hide when sticky */}
+            <button
+              className={`p-2 hover:text-[#1e3a5f] transition-all duration-700 ${
+                isSticky ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+              }`}
+            >
               <Search className="w-5 h-5" />
             </button>
+
+            {/* Donate Button - Show when sticky with animation */}
+            <div
+              className={`hidden lg:block transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] ${
+                isSticky
+                  ? "opacity-100 translate-x-0 scale-100"
+                  : "opacity-0 translate-x-8 scale-95 pointer-events-none"
+              }`}
+            >
+              <button className="bg-[#c4a35a] hover:bg-[#b8963f] text-white px-6 py-2.5 rounded font-semibold tracking-wider transition-colors whitespace-nowrap">
+                DONATE
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
             <button
               className="lg:hidden p-2 hover:text-[#1e3a5f] transition-colors"
               onClick={onMenuToggle}

@@ -8,35 +8,40 @@ const DonationSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Content */}
-        
 
           {/* Right Video/Image Section */}
           <div className="flex-1 w-full">
             <div className="relative rounded-lg overflow-hidden">
               {/* Video Embed - Replace the src with your actual video URL */}
-              <Image src="/assets/donation.avif" width={400} height={500}  alt="donation"/>
+              <Image
+                src="/assets/donation.avif"
+                width={400}
+                height={500}
+                alt="donation"
+              />
             </div>
           </div>
-            <div className="flex-1 space-y-6">
+          <div className="flex-1 space-y-6">
             {/* Subtitle */}
             <p className="text-gray-700 font-semibold tracking-widest uppercase text-sm">
-              Help Us to solve the problem
+              Giving is the greatest act of grace
             </p>
 
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-700">
-              We Need Your Help
+              Donate us to help the community
             </h2>
 
             {/* Description */}
             <p className="text-gray-600 text-lg leading-relaxed text-justify max-w-lg">
-              Join us as a volunteer and help strengthen the growing Muslim
-              community. Your time and skills can make a
-              meaningful difference in supporting spiritual, social, and
-              educational initiatives for local families. By contributing even a
-              little, you’ll be helping build a stronger, more connected, and
-              vibrant community. Together, we can create lasting positive impact
-              for current and future generations.
+              Donating to an Islamic charity is a powerful way to fulfill your
+              religious and moral duty while making a real difference in the
+              lives of those in need. Your contribution helps provide essential
+              support such as formulating a place of prayer and bringing the
+              community together in accordance with the principles of compassion
+              and generosity taught in Islam. Every donation, big or small, is
+              an opportunity to earn ongoing rewards (Sadaqah Jariyah) and bring
+              hope to those who need it most.
             </p>
 
             {/* Buttons */}

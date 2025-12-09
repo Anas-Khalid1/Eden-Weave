@@ -85,7 +85,7 @@ export default function AboutPage() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{
-          backgroundImage: "url('/assets/hero-section-image-4.avif')",
+          backgroundImage: "url('/assets/hero-section-image-7.avif')",
           height: "100vh",
         }}
       >

@@ -24,13 +24,13 @@ const VolunteerSection = () => {
 
             {/* Description */}
             <p className="text-gray-600 text-lg leading-relaxed text-justify max-w-lg">
-              Join us as a volunteer and help strengthen the growing Muslim
-              community. Your time and skills can make a meaningful difference
-              in supporting spiritual, social, and educational initiatives for
-              local families. By contributing even a little, you’ll be helping
-              build a stronger, more connected, and vibrant community. Together,
-              we can create lasting positive impact for current and future
-              generations.
+              Volunteers are the heart of our Islamic charity, helping us turn
+              compassion into action. By giving your time and skills, you enable
+              us to reach more people, organize impactful programs, and deliver
+              essential services. Your support ensures that our mission of
+              serving humanity and fulfilling the values of generosity and care
+              in Islam continues to grow. Together, we can make a lasting
+              difference.
             </p>
 
             {/* Buttons */}
