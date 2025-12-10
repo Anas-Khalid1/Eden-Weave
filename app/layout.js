@@ -1,6 +1,8 @@
 import { Jost } from "next/font/google";
 import "./globals.css";
 import { FloatingWhatsApp } from "@/reusableComponents/floatingWhatsapp";
+import ChatbotWidget from "@/reusableComponents/aiChatbot/ChatbotWidget";
+import { Toaster } from 'react-hot-toast';
 
 const jost = Jost({
   subsets: ["latin"],
@@ -62,6 +64,8 @@ export default function RootLayout({ children }) {
       >
         {children}
         <FloatingWhatsApp />
+        <ChatbotWidget />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

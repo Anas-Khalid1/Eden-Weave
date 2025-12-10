@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports for maximum performance
-  output: 'export',
+  // Disabled static export to enable API routes for AI chatbot
+  // output: 'export',
 
   // Optimize images
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
 
   // Compiler optimizations

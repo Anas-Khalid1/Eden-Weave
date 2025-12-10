@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9998] group">
+    <div className="fixed bottom-6 left-6 z-[9998] group">
       <button
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
