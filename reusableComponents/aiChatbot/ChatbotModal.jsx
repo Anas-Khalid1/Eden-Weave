@@ -106,7 +106,7 @@ export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
         {
           role: "assistant",
           content:
-            "I'm sorry, I encountered an error. Please try again or contact us directly at edenweavefoundation@gmail.com.",
+            "I'm sorry, I encountered an error. Please try again or contact us directly at enquiries@edenweave.org.uk.",
           timestamp: new Date().toISOString(),
           isError: true,
         },

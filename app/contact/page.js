@@ -4,11 +4,25 @@ import ContactFormSection from "@/components/contactSection/contact-form-section
 import Footer from "@/components/Footer/footer";
 
 export const metadata = {
-  title: "Contact Us",
-  description: "Get in touch with Eden Weave Foundation. Contact us for inquiries, volunteer opportunities, or to learn more about our community programs in Milton Keynes.",
+  title: "Contact Us - Get in Touch",
+  description: "Contact Eden Weave Foundation (MKEMC) for inquiries about Friday prayers, Islamic events, volunteer opportunities, Zakat & Sadaqah donations, or community programs in Milton Keynes, UK.",
+  keywords: [
+    "contact Eden Weave Foundation",
+    "Milton Keynes Islamic centre contact",
+    "Muslim charity contact UK",
+    "MKEMC contact",
+    "volunteer Islamic charity",
+    "donate to Muslim charity UK",
+    "Friday prayer enquiry",
+    "Islamic community Milton Keynes",
+  ],
   openGraph: {
-    title: "Contact Us | Eden Weave Foundation",
-    description: "Get in touch with Eden Weave Foundation",
+    title: "Contact Us | Eden Weave Foundation - Islamic Charity Milton Keynes",
+    description: "Get in touch with Eden Weave Foundation for community programs, volunteer opportunities and donations.",
+    url: "https://edenweave.org.uk/contact",
+  },
+  alternates: {
+    canonical: "https://edenweave.org.uk/contact",
   },
 };
 

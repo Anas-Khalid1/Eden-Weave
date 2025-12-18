@@ -14,31 +14,61 @@ const jost = Jost({
 
 export const metadata = {
   title: {
-    default: "Eden Weave Foundation - Inspiring Faith, Strengthening Community",
+    default: "Eden Weave Foundation - Islamic Charity Milton Keynes | Muslim Community UK",
     template: "%s | Eden Weave Foundation"
   },
-  description: "The Eden Weave Foundation advances Islamic faith, provides educational and recreational activities, alleviates poverty and promotes community harmony in United Kingdom.",
-  keywords: ["Eden Weave Foundation", "Islamic Community", "Milton Keynes", "MKEMC", "Muslim Community", "Charity", "UK"],
+  description: "Eden Weave Foundation (MKEMC) is a registered UK Islamic charity serving the Muslim community in Milton Keynes. Join us for Friday prayers, Eid celebrations, community events, Sadaqah, Zakat donations and volunteer opportunities.",
+  keywords: [
+    "Eden Weave Foundation",
+    "Islamic charity UK",
+    "Muslim charity Milton Keynes",
+    "MKEMC",
+    "Milton Keynes East Muslim Community",
+    "Islamic community centre",
+    "Friday prayer Milton Keynes",
+    "Jumuah prayer",
+    "Muslim community UK",
+    "Sadaqah",
+    "Zakat",
+    "Islamic charity",
+    "Eid celebrations Milton Keynes",
+    "Ramadan events UK",
+    "Islamic education",
+    "Muslim volunteer UK",
+    "charity donation UK",
+    "registered charity 1210287",
+    "Broughton mosque",
+    "Brooklands Muslim community",
+    "Glebe Farm Islamic centre",
+    "Wavendon community hub",
+  ],
   authors: [{ name: "Eden Weave Foundation" }],
   creator: "Eden Weave Foundation",
   publisher: "Eden Weave Foundation",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://edenweavefoundation.org",
-    title: "Eden Weave Foundation",
-    description: "Inspiring Faith, Strengthening Community",
+    url: "https://edenweave.org.uk",
+    title: "Eden Weave Foundation - Islamic Charity Milton Keynes",
+    description: "Inspiring Faith, Strengthening Community. Registered UK charity serving Muslims in Milton Keynes.",
     siteName: "Eden Weave Foundation",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Eden Weave Foundation",
-    description: "Inspiring Faith, Strengthening Community",
+ 
+  alternates: {
+    canonical: "https://edenweave.org.uk",
   },
+ 
 };
 
 export default function RootLayout({ children }) {

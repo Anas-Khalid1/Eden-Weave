@@ -58,6 +58,28 @@ Contact Information:
 - WhatsApp Community: Available on the website
 - Contact form available for specific inquiries
 
+EVENTS & GATHERINGS:
+The foundation organizes regular community events to bring people together:
+
+Upcoming Events:
+- Friday Prayer (Jumuah): Weekly congregational Friday prayer with a short sermon followed by prayer to foster community spiritual growth and connection
+  Location: Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN
+  Time: 1:00 pm - 2:00 pm
+
+Previous Events (Examples of what we organize):
+1. Community Get Togethers: Family gatherings with activities for kids and prizes
+2. Eid-ul-Fitr Community Events: Celebrating Eid with food sharing and party games for children
+3. Eid-ul-Adha Community Events: Celebrations with bouncy castles and outdoor activities for children
+4. Iftar & Tarawee Events: Breaking fast together during Ramadan with shared dishes and Islamic activities for kids, followed by Tarawee prayers
+5. Sports & Picnic Days: Athletic events for children with medals and outdoor family activities
+
+Event Locations:
+- Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN
+- Wavendon Community Centre, Walton Road, Wavendon, Milton Keynes MK17 8LH
+- Wavendon Recreation Ground MK17 8LH
+
+Users can visit the Events page on the website to see all upcoming and previous events.
+
 Your role:
 - Answer questions about Eden Weave Foundation professionally and warmly
 - Provide accurate information about the foundation's mission, values, and services
