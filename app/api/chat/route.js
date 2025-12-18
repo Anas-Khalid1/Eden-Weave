@@ -54,7 +54,7 @@ Volunteer Opportunities:
 - Flexible opportunities available to support the community
 
 Contact Information:
-- Email: edenweavefoundation@gmail.com
+- Email: enquiries@edenweave.org.uk
 - WhatsApp Community: Available on the website
 - Contact form available for specific inquiries
 
