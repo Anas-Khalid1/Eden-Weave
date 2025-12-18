@@ -2,43 +2,22 @@
 
 import React from "react";
 import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
+import { UPCOMING_EVENTS, PREVIOUS_EVENTS } from "@/components/events/constants";
 
 const UpcomingEvents = () => {
-  const featuredEvent = {
+  // Get the first upcoming event as featured
+  const featuredEvent = UPCOMING_EVENTS[0] || {
     day: "01",
     month: "JAN",
-    title: "CHARITY MEETUP — THE FUTURE OF CHARITY",
-    startTime: "1:00 pm",
-    endTime: "1:00 pm",
-    location: "London Park",
+    title: "No Upcoming Events",
+    startTime: "TBD",
+    endTime: "TBD",
+    location: "TBD",
   };
 
-  const sideEvents = [
-    {
-      day: "01",
-      month: "Dec",
-      title: "TRUSTEE LEADERSHIP PROGRAMME — LONDON SPRING 2020",
-      startTime: "8:00 am",
-      endTime: "8:00 am",
-      location: "London Park",
-    },
-    {
-      day: "03",
-      month: "Dec",
-      title: "CHARITY MANAGEMENT DEGREE APPRENTICESHIP TASTER EVENT",
-      startTime: "8:00 am",
-      endTime: "8:00 am",
-      location: "London Park",
-    },
-    {
-      day: "13",
-      month: "Dec",
-      title: "AFVS CIC REFRESHER TRUSTEE TRAINING — TRUSTEE ROLES & RESPONSIBILITIES",
-      startTime: "1:00 pm",
-      endTime: "1:00 pm",
-      location: "London Park",
-    },
-  ];
+  // Show previous events on the right side (up to 3, most recent first)
+  const sideEvents = [...PREVIOUS_EVENTS].reverse().slice(0, 3);
 
   return (
     <section
@@ -52,9 +31,8 @@ const UpcomingEvents = () => {
       <div className="relative z-10 py-16 px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="text-center mb-12">
-         
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Upcoming Events
+           Our Events
           </h2>
         </div>
 
@@ -63,13 +41,20 @@ const UpcomingEvents = () => {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Left - Featured Event with Image */}
             <div className="lg:w-[55%]">
-              <div className="relative h-[400px] lg:h-[420px] rounded-sm overflow-hidden">
-                {/* Event Image */}
+              <Link href={`/events?tab=upcoming#event-${featuredEvent.id}`} className="block relative h-[400px] lg:h-[420px] rounded-sm overflow-hidden group">
+                {/* Event Image - Using original static image */}
                 <img
                   src="/assets/hero-section-image-6.avif"
-                  alt="Charity Meetup"
-                  className="w-full h-full object-cover"
+                  alt="Upcoming Event"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+
+                {/* Upcoming Event Label */}
+                <div className="absolute top-4 left-4">
+                  <span className="bg-[#c4a35a] text-white px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded">
+                    Upcoming Event
+                  </span>
+                </div>
 
                 {/* Bottom Overlay with Event Info */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent pt-20 pb-6 px-6">
@@ -104,14 +89,15 @@ const UpcomingEvents = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* Right - Event List */}
             <div className="lg:w-[45%] flex flex-col justify-between gap-4">
               {sideEvents.map((event, index) => (
-                <div
-                  key={index}
+                <Link
+                  href={`/events?tab=previous#event-${event.id}`}
+                  key={event.id || index}
                   className="flex items-start gap-5 p-4 hover:bg-white/5 transition-colors duration-300 rounded cursor-pointer"
                 >
                   {/* Date */}
@@ -132,28 +118,31 @@ const UpcomingEvents = () => {
                       {event.title}
                     </h3>
                     <div className="flex flex-wrap items-center gap-4 mt-3 text-gray-300 text-sm">
-                      <div className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4 text-gray-300" />
-                        <span>
-                          {event.startTime} - {event.endTime}
-                        </span>
-                      </div>
+                      
                       <div className="flex items-center gap-1.5">
                         <MapPin className="w-4 h-4 text-gray-300" />
                         <span>{event.location}</span>
                       </div>
+                        <div className="flex items-center gap-1.5">
+                        
+                        <span className="line-clamp-1">{event.description}</span>
+                      </div>
+
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* View All Events Button */}
           <div className="flex justify-center mt-10">
-           <button className="border-2 border-[#fcd88a] text-[#fcd88a] hover:bg-[#fcd88a] hover:cursor-pointer hover:text-white font-semibold px-8 py-3 rounded transition-colors duration-300 uppercase tracking-wide">
-                View All Events
-              </button>
+            <Link
+              href="/events"
+              className="border-2 border-[#fcd88a] text-[#fcd88a] hover:bg-[#fcd88a] hover:cursor-pointer hover:text-white font-semibold px-8 py-3 rounded transition-colors duration-300 uppercase tracking-wide"
+            >
+              View All Events
+            </Link>
           </div>
         </div>
       </div>

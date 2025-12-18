@@ -88,10 +88,10 @@ export default function ContactPage() {
               these.
             </p>
             <a
-              href="mailto:edenweavefoundation@gmail.com"
+              href="mailto:enquiries@edenweave.org.uk"
               className="text-amber-500 text-sm hover:underline"
             >
-              edenweavefoundation@gmail.com
+             enquiries@edenweave.org.uk
             </a>
           </div>
 

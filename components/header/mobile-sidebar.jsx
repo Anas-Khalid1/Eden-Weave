@@ -2,13 +2,14 @@
 
 import { X } from "lucide-react"
 import { useEffect } from "react"
+import Link from "next/link"   // <-- Added
 
 const navItems = [
-  { name: "Home", href: "#", active: true },
-  { name: "About", href: "#" },
+  { name: "Home", href: "/", active: true },
+  { name: "About", href: "/about" },
   { name: "Events", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "Contact Us", href: "#" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact Us", href: "/contact" },
 ]
 
 export function MobileSidebar({ isOpen, onClose }) {
@@ -18,6 +19,7 @@ export function MobileSidebar({ isOpen, onClose }) {
     } else {
       document.body.style.overflow = ""
     }
+
     return () => {
       document.body.style.overflow = ""
     }
@@ -35,7 +37,7 @@ export function MobileSidebar({ isOpen, onClose }) {
         onClick={onClose}
       />
 
-      {/* Sidebar - Updated to navy blue theme */}
+      {/* Sidebar */}
       <div
         className={`
           fixed inset-0 z-[101] bg-[#1e3a5f]
@@ -44,11 +46,15 @@ export function MobileSidebar({ isOpen, onClose }) {
         `}
       >
         <div className="flex flex-col h-full">
-          {/* Header - Updated logo */}
+
+          {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/20">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Eden Weave Foundation" className="h-12 w-auto" />
+              <Link href="/">
+              <img src="/assets/logo-header.png" alt="Eden Weave Foundation" className="h-20 w-auto" />
+              </Link>
             </div>
+
             <button
               onClick={onClose}
               className="p-2 text-white hover:text-[#c4a35a] transition-colors"
@@ -58,11 +64,11 @@ export function MobileSidebar({ isOpen, onClose }) {
             </button>
           </div>
 
-          {/* Navigation - Updated colors */}
+          {/* Navigation */}
           <nav className="flex-1 overflow-y-auto py-6">
             <div className="px-6 space-y-1">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   onClick={onClose}
@@ -78,17 +84,18 @@ export function MobileSidebar({ isOpen, onClose }) {
                   }}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </nav>
 
-          {/* Donate Button - Updated to gold color */}
+          {/* Donate Button */}
           <div className="p-6 border-t border-white/20">
-            <button className="w-full bg-[#c4a35a] hover:bg-[#b8963f] text-white py-4 rounded font-semibold tracking-wider transition-colors">
+            <Link href="/donate" onClick={onClose} className="block w-full bg-[#c4a35a] hover:bg-[#b8963f] text-white py-4 rounded font-semibold tracking-wider transition-colors text-center">
               DONATE
-            </button>
+            </Link>
           </div>
+
         </div>
       </div>
     </>

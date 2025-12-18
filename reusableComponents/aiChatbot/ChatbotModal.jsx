@@ -1,45 +1,48 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Send, X, Minimize2, Loader2 } from 'lucide-react';
-import toast from 'react-hot-toast';
-import Image from 'next/image';
+import { useState, useRef, useEffect } from "react";
+import { Send, X, Minimize2, Loader2 } from "lucide-react";
+import toast from "react-hot-toast";
+import Image from "next/image";
 export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
   const [messages, setMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState('');
+  const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
   // Load chat history from localStorage on mount
   useEffect(() => {
-    const savedMessages = localStorage.getItem('eden-weave-chat-history');
+    const savedMessages = localStorage.getItem("eden-weave-chat-history");
     if (savedMessages) {
       try {
         setMessages(JSON.parse(savedMessages));
       } catch (error) {
-        console.error('Failed to load chat history:', error);
+        console.error("Failed to load chat history:", error);
       }
     } else {
       // Set welcome message if no history
-      setMessages([{
-        role: 'assistant',
-        content: 'Hello! 👋 I\'m here to help you learn about the Eden Weave Foundation. Feel free to ask me about our mission, how to donate, volunteer opportunities, or any other questions you might have!',
-        timestamp: new Date().toISOString()
-      }]);
+      setMessages([
+        {
+          role: "assistant",
+          content:
+            "Hello! 👋 I'm here to help you learn about the Eden Weave Foundation. Feel free to ask me about our mission, how to donate, volunteer opportunities, or any other questions you might have!",
+          timestamp: new Date().toISOString(),
+        },
+      ]);
     }
   }, []);
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
     if (messages.length > 0) {
-      localStorage.setItem('eden-weave-chat-history', JSON.stringify(messages));
+      localStorage.setItem("eden-weave-chat-history", JSON.stringify(messages));
     }
   }, [messages]);
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   // Focus input when modal opens
@@ -53,85 +56,90 @@ export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
     if (!inputMessage.trim() || isLoading) return;
 
     const userMessage = {
-      role: 'user',
+      role: "user",
       content: inputMessage.trim(),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
 
     // Add user message to chat
-    setMessages(prev => [...prev, userMessage]);
-    setInputMessage('');
+    setMessages((prev) => [...prev, userMessage]);
+    setInputMessage("");
     setIsLoading(true);
 
     try {
       // Send message to API
-      const response = await fetch('/api/chat', {
-        method: 'POST',
+      const response = await fetch("/api/chat", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           message: userMessage.content,
-          history: messages.map(msg => ({
+          history: messages.map((msg) => ({
             role: msg.role,
-            content: msg.content
-          }))
+            content: msg.content,
+          })),
         }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to get response');
+        throw new Error(data.error || "Failed to get response");
       }
 
       // Add assistant response to chat
       const assistantMessage = {
-        role: 'assistant',
+        role: "assistant",
         content: data.response,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
-      setMessages(prev => [...prev, assistantMessage]);
-
+      setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Chat error:', error);
-      toast.error(error.message || 'Failed to send message. Please try again.');
+      console.error("Chat error:", error);
+      toast.error(error.message || "Failed to send message. Please try again.");
 
       // Add error message to chat
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        content: 'I\'m sorry, I encountered an error. Please try again or contact us directly at edenweavefoundation@gmail.com.',
-        timestamp: new Date().toISOString(),
-        isError: true
-      }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "I'm sorry, I encountered an error. Please try again or contact us directly at edenweavefoundation@gmail.com.",
+          timestamp: new Date().toISOString(),
+          isError: true,
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
   };
 
   const clearChat = () => {
-    localStorage.removeItem('eden-weave-chat-history');
-    setMessages([{
-      role: 'assistant',
-      content: 'Chat cleared! How can I help you today?',
-      timestamp: new Date().toISOString()
-    }]);
-    toast.success('Chat history cleared');
+    localStorage.removeItem("eden-weave-chat-history");
+    setMessages([
+      {
+        role: "assistant",
+        content: "Chat cleared! How can I help you today?",
+        timestamp: new Date().toISOString(),
+      },
+    ]);
+    toast.success("Chat history cleared");
   };
 
   const suggestedQuestions = [
-    'How can I donate?',
-    'Tell me about volunteer opportunities',
-    'What is Eden Weave Foundation\'s mission?',
-    'How can I get involved?'
+    "How can I donate?",
+    "Tell me about volunteer opportunities",
+    "What is Eden Weave Foundation's mission?",
+    "How can I get involved?",
   ];
 
   const handleSuggestedQuestion = (question) => {
@@ -142,16 +150,16 @@ export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-20 right-4 md:right-6 w-[95vw] md:w-[400px] h-[470px] rounded-2xl bg-transparent shadow-2xl flex flex-col z-50 border border-gray-200">
+    <div className="fixed bottom-20 right-4 md:right-6 w-[95vw] md:w-[340px] h-[470px] rounded-t-xl bg-transparent shadow-2xl flex flex-col z-50 border border-gray-200">
       {/* Header */}
-      <div className="bg-[#1e3a5f] text-white p-4 rounded-t-2xl flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-20 h-10 rounded-full flex items-center justify-center font-bold text-[#1e3a5f]">
+      <div className="bg-[#1e3a5f] text-white p-4 rounded-t-xl flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {/* <div className="w-20 h-10 rounded-full flex items-center justify-center font-bold text-[#1e3a5f]">
             <Image src="/logo.png" width={100} height={200} alt="Eden Weave Logo" className="w-25 h-15" />
-          </div>
+          </div> */}
           <div>
             <h3 className="font-semibold text-base">Eden Weave Assistant</h3>
-            <p className="text-xs text-gray-200">Always here to help</p>
+          
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -177,22 +185,26 @@ export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+            className={`flex ${
+              msg.role === "user" ? "justify-end" : "justify-start"
+            }`}
           >
             <div
               className={`max-w-[80%] px-4 py-2.5 rounded-lg ${
-                msg.role === 'user'
-                  ? 'bg-[#1e3a5f] text-white'
+                msg.role === "user"
+                  ? "bg-[#1e3a5f] text-white"
                   : msg.isError
-                  ? 'bg-red-50 text-red-800 border border-red-200'
-                  : 'bg-white text-gray-800 border border-gray-200'
+                  ? "bg-red-50 text-red-800 border border-red-200"
+                  : "bg-white text-gray-800 border border-gray-200"
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap break-words">{msg.content}</p>
+              <p className="text-sm whitespace-pre-wrap break-words">
+                {msg.content}
+              </p>
               <span className="text-xs opacity-60 mt-1 block">
                 {new Date(msg.timestamp).toLocaleTimeString([], {
-                  hour: '2-digit',
-                  minute: '2-digit'
+                  hour: "2-digit",
+                  minute: "2-digit",
                 })}
               </span>
             </div>
@@ -212,7 +224,9 @@ export default function ChatbotModal({ isOpen, onClose, onMinimize }) {
         {/* Suggested questions (only show when chat is empty or just welcome message) */}
         {messages.length <= 1 && !isLoading && (
           <div className="space-y-2 pt-2">
-            <p className="text-xs text-gray-500 font-medium">Suggested questions:</p>
+            <p className="text-xs text-gray-500 font-medium">
+              Suggested questions:
+            </p>
             <div className="flex flex-wrap gap-2">
               {suggestedQuestions.map((question, idx) => (
                 <button

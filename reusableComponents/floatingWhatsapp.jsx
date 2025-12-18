@@ -34,7 +34,7 @@ export function FloatingWhatsApp() {
       {/* Tooltip */}
       <div
         className={`absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
-          isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
+          isHovered ? "opacity-100 translate-y-0 translate-x-20" : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
         Join WhatsApp Group

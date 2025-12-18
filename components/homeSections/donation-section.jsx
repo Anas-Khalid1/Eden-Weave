@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const DonationSection = () => {
   return (
     <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
@@ -14,9 +15,9 @@ const DonationSection = () => {
             <div className="relative rounded-lg overflow-hidden">
               {/* Video Embed - Replace the src with your actual video URL */}
               <Image
-                src="/assets/donation.avif"
-                width={400}
-                height={500}
+                src="/assets/donation-img.webp"
+                width={600}
+                height={600}
                 alt="donation"
               />
             </div>
@@ -46,9 +47,11 @@ const DonationSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
+              <Link href="/donate">
               <button className="bg-[#c4a35a] hover:bg-[#90753a] hover:cursor-pointer text-white font-semibold px-8 py-3 rounded transition-colors duration-300 uppercase tracking-wide">
                 Donate Now
               </button>
+              </Link>
               {/* <button className="border-2 border-blue-950 text-blue-950 hover:bg-blue-950 hover:cursor-pointer hover:text-white font-semibold px-8 py-3 rounded transition-colors duration-300 uppercase tracking-wide">
                 Volunteer
               </button> */}

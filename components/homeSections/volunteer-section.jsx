@@ -52,9 +52,9 @@ const VolunteerSection = () => {
             <div className="relative rounded-lg overflow-hidden">
               {/* Video Embed - Replace the src with your actual video URL */}
               <Image
-                src="/assets/volunteer.avif"
-                width={400}
-                height={500}
+                src="/assets/volunteer.webp"
+                width={600}
+                height={600}
                 alt="Volunteer"
               />
             </div>

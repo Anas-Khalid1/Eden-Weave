@@ -11,16 +11,15 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
-  const quickLinks = [
-    "About Our Organization",
-    "Become a Volunteer",
-    "Events",
-    "Gallery",
-    "FAQ",
+   const quickLinks = [
+    { label: 'About Our Organization', href: '/about' },
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Events', href: '/events' },
+    { label: 'Gallery', href: '/gallery' },
   ];
-
   return (
     <footer className="bg-[#1a1a1a] text-gray-300 mt-10">
       {/* Main Footer */}
@@ -32,7 +31,9 @@ const Footer = () => {
             <div className="mb-6">
               <div className="flex flex-col items-start">
                 {/* Logo Icon */}
-                <Image src="/logo.png" width={200} height={200} alt="logo image" />
+                <Link href="/">
+                <Image src="/assets/logo-header.png" width={200} height={200} alt="logo image" />
+                </Link>
               </div>
             </div>
 
@@ -43,30 +44,20 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex items-center gap-4">
-              <a
-                href="#"
+              <Link
+                href="https://www.facebook.com/share/1CjaBrUBGV/"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
+              </Link>
+             
+             
+              <Link
+                href="https://www.instagram.com/mkemcorg?igsh=MWFvdnR6NjFzdW11eQ=="
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -91,10 +82,10 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-emerald-400" />
               <a
-                href="mailto:EdenWeaveFoundation@gmail.com"
+                href="mailto:enquiries@edenweave.org.uk"
                 className="text-gray-400 text-sm hover:text-white transition-colors duration-300"
               >
-             edenweavefoundation@gmail.com
+            enquiries@edenweave.org.uk
               </a>
             </div>
           </div>
@@ -105,19 +96,19 @@ const Footer = () => {
               Quick Links
             </h3>
 
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 text-gray-400 text-sm hover:text-white transition-colors duration-300 group"
-                  >
-                    <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-emerald-400 transition-colors duration-300" />
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+           <ul className="space-y-3">
+      {quickLinks.map((link, index) => (
+        <li key={index}>
+          <Link
+            href={link.href}
+            className="flex items-center gap-2 text-gray-400 text-sm hover:text-white transition-colors duration-300 group"
+          >
+            <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-emerald-400 transition-colors duration-300" />
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
           </div>
         </div>
       </div>

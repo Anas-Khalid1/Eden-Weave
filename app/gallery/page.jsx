@@ -214,16 +214,6 @@ export default function GalleryPage() {
                             </div>
                           </div>
                         </div>
-
-                        {/* Download/Action Button - Top Right */}
-                        {/* <div className="absolute top-3 right-3">
-                          <button
-                            className="bg-white/90 hover:bg-white text-gray-800 p-2 rounded-lg backdrop-blur-sm transition-all"
-                            aria-label="Download"
-                          >
-                            <Download className="w-4 h-4" />
-                          </button>
-                        </div> */}
                       </div>
                     </div>
                   </div>

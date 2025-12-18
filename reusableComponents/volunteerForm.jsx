@@ -96,7 +96,7 @@ export function VolunteerModal({ isOpen, onClose }) {
       onClick={handleClose}
     >
       <div
-        className={`absolute inset-0 bg-foreground/20 backdrop-blur-xs transition-all duration-300 ${
+        className={`absolute inset-0 bg-foreground/80 backdrop-blur-sm transition-all duration-300 ${
           isAnimating ? "opacity-100" : "opacity-0"
         }`}
       />
