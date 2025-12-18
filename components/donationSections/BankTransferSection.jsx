@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Copy, Check, Building2 } from "lucide-react";
 
 const bankDetails = {
-  bankName: "HSBC Bank",
-  accountName: "MKEMC Charity Account",
-  sortCode: "40-12-34",
-  accountNumber: "12345678",
+  bankName: "The Co-operative Bank",
+  accountName: " Milton Keynes East Muslim Community",
+  sortCode: "08-92-99",
+  accountNumber: "67378021",
 };
 
 export default function BankTransferSection() {
