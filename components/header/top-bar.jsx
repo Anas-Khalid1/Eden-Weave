@@ -1,9 +1,7 @@
 import { Facebook, Linkedin, Phone, Instagram, Lock, User } from "lucide-react";
-import { useState } from "react";
-import { VolunteerModal } from "@/reusableComponents/volunteerForm";
 import Link from "next/link";
+
 export function TopBar() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="bg-[#1a1a1a] text-white py-3 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -13,9 +11,9 @@ export function TopBar() {
             <Link href="https://www.facebook.com/share/1CjaBrUBGV/" className="hover:text-[#2ec4a5] transition-colors">
               <Facebook className="w-4 h-4" />
             </Link>
-          
-           
-           
+
+
+
             <Link href="https://www.instagram.com/mkemcorg?igsh=MWFvdnR6NjFzdW11eQ==" className="hover:text-[#2ec4a5] transition-colors">
               <Instagram className="w-4 h-4" />
             </Link>
@@ -29,19 +27,18 @@ export function TopBar() {
         {/* Right side - Links and auth */}
         <div className="flex items-center gap-4 text-sm">
           <div className="hidden lg:flex items-center gap-4">
-          
-           
+
+
             <Link href="/about" className="hover:text-[#2ec4a5] transition-colors">
               What We Do
             </Link>
             <span className="text-gray-500">|</span>
-            <a
-              href="#"
+            <Link
+              href="/#volunteer-section"
               className="hover:text-[#2ec4a5] transition-colors"
-              onClick={() => setIsModalOpen(true)}
             >
               Become A Volunteer
-            </a>
+            </Link>
             <span className="text-gray-500">|</span>
             <Link href="contact" className="hover:text-[#2ec4a5] transition-colors">
               Contact Us
@@ -59,10 +56,6 @@ export function TopBar() {
           </div> */}
         </div>
       </div>
-      <VolunteerModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </div>
   );
 }

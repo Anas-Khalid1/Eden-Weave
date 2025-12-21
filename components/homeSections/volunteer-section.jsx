@@ -7,7 +7,7 @@ import { VolunteerModal } from "@/reusableComponents/volunteerForm";
 const VolunteerSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <section id="volunteer-section" className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Content */}

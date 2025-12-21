@@ -7,6 +7,7 @@ import Link from "next/link";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
   { name: "Events", href: "/events" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
@@ -75,13 +76,13 @@ export function NavigationBar({ isSticky, onMenuToggle }) {
           {/* Right side - Search (when not sticky) or Donate button (when sticky) */}
           <div className="flex items-center  gap-2">
             {/* Search Button - Hide when sticky */}
-            <button
+            {/* <button
               className={`p-2 hover:text-[#1e3a5f] transition-all duration-700 ${
                 isSticky ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
               }`}
             >
               <Search className="w-5 h-5" />
-            </button>
+            </button> */}
 
             {/* Donate Button - Show when sticky with animation */}
             <div

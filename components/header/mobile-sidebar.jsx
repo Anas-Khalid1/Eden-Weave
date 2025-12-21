@@ -2,12 +2,13 @@
 
 import { X } from "lucide-react"
 import { useEffect } from "react"
-import Link from "next/link"   // <-- Added
+import Link from "next/link"   
 
 const navItems = [
   { name: "Home", href: "/", active: true },
   { name: "About", href: "/about" },
-  { name: "Events", href: "#" },
+  { name: "Services", href: "/services" },
+  { name: "Events", href: "/events" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
 ]

@@ -5,6 +5,7 @@ import { Header } from "@/components/header/header";
 import Footer from "@/components/Footer/footer";
 import { VolunteerModal } from "@/reusableComponents/volunteerForm";
 import DonateHeroSection from "@/components/donationSections/DonateHeroSection";
+import WhyDonateSection from "@/components/donationSections/WhyDonateSection";
 import BankTransferSection from "@/components/donationSections/BankTransferSection";
 import OnlineDonationSection from "@/components/donationSections/OnlineDonationSection";
 import DonateOptionsSection from "@/components/donationSections/DonateOptionsSection";
@@ -18,11 +19,11 @@ export default function DonatePage() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{
-          backgroundImage: "url('/assets/about-us-hero-section.avif')",
+          backgroundImage: "url('/assets/hero-section-img-donation.avif')",
           height: "100vh",
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <Header />
@@ -30,7 +31,12 @@ export default function DonatePage() {
       {/* Hero Section */}
       <DonateHeroSection />
 
-      {/* Main Content */}
+      {/* Why Donate Section */}
+      <section className="relative" style={{ zIndex: 3 }}>
+        <WhyDonateSection />
+      </section>
+
+      {/* Main Content - Ways to Donate */}
       <section className="relative bg-white py-16" style={{ zIndex: 3 }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           {/* Section Header */}

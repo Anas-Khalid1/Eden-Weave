@@ -40,15 +40,15 @@ const trustees = [
   {
     id: '2',
     name: 'Irshad',
-    role: 'Trustee',
+    role: 'Trustee & Founding Member',
     bio: 'A seasoned IT professional with over 14 years in the telecom sector. He leads community events, supports fundraising initiatives, and promotes community well-being.',
     imageUrl: '/assets/Irshad-Tagala.jpg',
     linkedinUrl: '#',
   },
   {
     id: '3',
-    name: 'Rizwan',
-    role: 'Trustee',
+    name: 'Dr.Rizwan',
+    role: 'Trustee & Founding Member',
     bio: 'A senior technology consultant specialising in IoT, cloud, and digital transformation. He provides strategic guidance on innovation and technology initiatives.',
     imageUrl: '/assets/Syed-Rizwan.jpg',
     linkedinUrl: '#',
@@ -65,7 +65,7 @@ const trustees = [
   {
     id: '6',
     name: 'Ebrahim',
-    role: 'Trustee',
+    role: 'Trustee & Founding Member',
     bio: 'An experienced technology professional with a diverse background across charity, government, corporate finance, and PropTech. As a trustee of the Eden Weave Foundation, he provides strategic oversight on technology and educational initiatives, including the Garden of Knowledge madrassah.',
     imageUrl: '/assets/Ebrahim.jpeg',
     linkedinUrl: '#',

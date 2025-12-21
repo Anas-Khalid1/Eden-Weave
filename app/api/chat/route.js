@@ -58,13 +58,51 @@ Contact Information:
 - WhatsApp Community: Available on the website
 - Contact form available for specific inquiries
 
+OUR SERVICES (Prayer Services):
+We offer regular prayer services to help our community stay connected to their faith and each other.
+
+1. Jumu'ah Prayer (Friday Congregational Prayer):
+   - Schedule: Every Friday
+   - Location: Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN
+   - Description: Join us every Friday for Jumu'ah prayer, the most important weekly gathering in Islam. The service includes a sermon (Khutbah) followed by the congregational prayer, fostering spiritual growth and community unity.
+
+2. Isha Prayer (Daily Night Prayer):
+   - Schedule: Every Day
+   - Location: Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN
+   - Description: Join us daily for Isha prayer, the night prayer that marks the end of the day's obligatory prayers. This is a wonderful opportunity to connect with the community and strengthen your faith through daily worship.
+
+Everyone is welcome to join our prayer services. Whether you're new to the community or a long-time member, we warmly welcome you. Our services are open to all Muslims in the Milton Keynes area.
+
+Users can visit the Services page on the website for more details about prayer times.
+
+DONATION INFORMATION:
+We are dedicated to empowering our community through social programs, education, and charitable initiatives.
+
+Why Donate to Us?
+1. Find a permanent premises / location - Help us establish a dedicated space for our community to gather, pray, and grow together.
+2. Help support on-going programmes like community prayers - Your contribution keeps our regular prayer services and community programmes running smoothly.
+3. To provide support in community events - Enable us to organize meaningful events that bring families together and strengthen our bonds.
+4. Support our educational initiatives - Fund Islamic education programmes for children and adults in our community.
+
+Ways to Donate:
+
+1. Bank Transfer / Standing Order:
+   - Bank: The Co-operative Bank
+   - Account Name: Milton Keynes East Muslim Community
+   - Sort Code: 08-92-99
+   - Account Number: 67378021
+
+2. Online Donation:
+   - Donate online at: https://donate.mydona.com/milton-keynes-east-muslim-comm
+   - Secure and convenient payment options available
+   - QR code available on the Donate page
+
+Every contribution, big or small, makes a difference. All donations are used transparently to serve the community.
+
+Users can visit the Donate page on the website for more information and to make a donation.
+
 EVENTS & GATHERINGS:
 The foundation organizes regular community events to bring people together:
-
-Upcoming Events:
-- Friday Prayer (Jumuah): Weekly congregational Friday prayer with a short sermon followed by prayer to foster community spiritual growth and connection
-  Location: Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN
-  Time: 1:00 pm - 2:00 pm
 
 Previous Events (Examples of what we organize):
 1. Community Get Togethers: Family gatherings with activities for kids and prizes

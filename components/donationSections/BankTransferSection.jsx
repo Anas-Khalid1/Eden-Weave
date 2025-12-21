@@ -23,7 +23,7 @@ export default function BankTransferSection() {
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       <div className="bg-amber-50 p-6 border-b border-amber-100 flex items-center gap-4">
         <Building2 className="text-amber-600" />
-        <h3 className="text-xl font-bold text-gray-800">Bank Transfer</h3>
+        <h3 className="text-xl font-bold text-gray-800">Bank Transfer / Standing Order</h3>
       </div>
 
       <div className="p-8 space-y-6">

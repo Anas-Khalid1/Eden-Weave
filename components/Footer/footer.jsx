@@ -116,9 +116,9 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             {/* Left Links */}
-            <div className="flex items-center gap-2 text-sm">
+            {/* <div className="flex items-center gap-2 text-sm">
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -132,7 +132,7 @@ const Footer = () => {
               >
                 Terms Of Use
               </a>
-            </div>
+            </div> */}
 
             {/* Right Copyright */}
             <p className="text-gray-500 text-sm">
