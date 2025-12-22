@@ -16,7 +16,7 @@ const prayerServices = [
     title: "Isha Prayer",
     day: "Every Day",
     location:
-      "Wavendon Community Hub, Dankworth Way, Glebe Farm, Wavendon, Milton Keynes MK17 8ZN",
+      "Glebe Farm Community Hub, Glebe Farm School, MK17 8XY Milton Keynes",
     description:
       "Join us daily for Isha prayer, the night prayer that marks the end of the day's obligatory prayers. This is a wonderful opportunity to connect with the community and strengthen your faith through daily worship.",
     imageUrl: "/gallery/gallery-img-9.webp",
